@@ -1,0 +1,64 @@
+
+
+/********************************About Page Styling***********************************************/
+
+body {
+    font-family: $font-stack;
+    margin: 0;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+.title {
+    color: rgb(252, 252, 252);
+}
+
+.about-section{
+    padding: 50px;
+    text-align: center;
+    background-color: $bg-color;
+    color: white;
+
+    .headerabout{
+        padding-bottom: 30px;
+        margin:0;
+      }
+}
+  
+.row{
+    .column {
+        float: left;
+        width: 33.3%;
+        margin-bottom: 16px;
+        padding: 0 8px;
+    }
+      
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        margin: 8px;
+    }
+
+    .container {
+        padding: 0 16px;
+        background-color: $bg-color;
+        color: white;
+        align-items: center;
+    }
+} 
+  
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+  
+
+
+  
+  

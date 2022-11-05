@@ -1,0 +1,54 @@
+body {
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+}
+
+.socialmediaicons ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.socialmediaicons ul li {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.socialmediaicons ul li img {
+  width: 30px;
+  border-radius: 50%;
+}
+
+.socialmediaicons{
+	text-align: center;
+}
+
+.colorYellow{
+  background-color: yellow;
+}
+
+.enable{
+  color:#fff;
+	background-color: orange;
+	border-radius: 3px;
+	border:2px solid orange;
+  margin-left: 180px;
+  
+  
+}
+
+:hover.enable{
+  color:black;
+	background-color:gray;
+	border-radius: 3px;
+	border:2px solid black;
+  margin-left: 180;
+  cursor: pointer;
+}
+
+.disable{
+  color:#fff;
+	background-color: grey;
+	border-radius: 3px;
+
+	margin-left: 180px;
+}

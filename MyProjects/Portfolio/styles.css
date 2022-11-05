@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo{
+    display: none;
+}
+
+.navbar-brand{
+    padding-left: 20px;
+}
+
+.nav-item{
+    display: none;
+    padding-left: 30px;
+}
+
+.collapse{
+    padding-left: 800px;
+}
+
+footer {
+    height: 120vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.section1{
+    height: 100vh;
+    background-color: #1c1a27;
+    /* position: relative; */
+}
+
+.logo{
+    height: 80px;
+    padding: 5px 5px;
+}
+
+.animation h2, p {
+    display: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.animation h2{
+    padding: 120px 430px 0px;
+    font-size: 90px;
+    width: 100%;
+    color: aliceblue;
+}
+
+.animation p{
+    padding: 15px 360px 0px;
+    font-size: 25px;
+    width: 100%;
+    color: aliceblue;
+}
+
+/* .titletext, .animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .animation {
+    z-index: 10;
+  } */
+
+.titletext h2, h5{
+    font-size: 100px;
+
+}
+
+
+.animation{
+    height: 100vh;
+    background-image: linear-gradient(to top, #dbdcd7 0%, #dddcd7 24%, #e2c9cc 30%, #e7627d 46%, #b8235a 59%, #801357 71%, #3d1635 84%, #1c1a27 100%);
+    position: relative;
+    overflow-x: hidden;
+}
+
+.car1{
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+}
+
+.car2{
+    height: 100px;
+    position: absolute;
+    top: 35%;
+    left: 0%;
+}
+
+.car3{
+    height: 100px;
+    position: absolute;
+    top: 20%;
+    left: 0%;
+}
+
+.car4{
+    height: 100px;
+    position: absolute;
+    top: 5%;
+    left: 0%;
+}
+
+.car5{
+    height: 100px;
+    position: absolute;
+    top: 65%;
+    left: 0%;
+}
+
+
+

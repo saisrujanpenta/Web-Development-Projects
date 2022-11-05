@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title></title>
+
+        <style>
+            label {
+                float: left;
+                width: 150px;
+            }
+
+            #container {
+                width: 700px;
+                margin: auto;
+                background-color: beige;
+            }
+
+            main {
+                padding: 50px;
+            }
+        </style>
+
+    </head>
+
+    <body id="container">
+        <main>
+            <h2>Feedback Form</h2>
+            <h3>Please provide your feedback</h3>
+            <br><br>
+
+            <form id="myForm">
+                <label>Title*:</label>
+                <input type="radio" name="title" id="miss" value="miss" required="required" /> Miss
+                <input type="radio" name="title" id="mr" value="mr" required="required" /> Mr.
+                <input type="radio" name="title" id="mrs" value="mrs" required="required" /> Mrs.
+                <br><br>
+
+                <label for="firstName">First Name*:</label>
+                <input type="text" name="firstName" id="firstName" placeholder="First Name"
+                     required>
+                <br><br>
+
+                <div id="error_firstName" style="display: none; color: red;">
+                    Invalid input for the First Name field. Only text are allowed.
+                    <br><br>
+                </div>
+
+                <label for="emailId">Email Id*:</label>
+                <input type="text" name="emailId" id="emailId" placeholder="yourname@domain.com"
+                     required>
+                <br><br>
+
+                <div id="error_emailId" style="display: none; color: red;">
+                    Invalid input for the Email Id field. Please enter valid email id.
+                    <br><br>
+                </div>
+
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxx-xxx-xxxx"
+                    required/>
+                <br><br>
+
+                <div id="error_phoneNumber" style="display: none; color: red;">
+                    Invalid input for the Phone Number field. Please enter valid phone number.
+                    <br><br>
+                </div>
+
+                <label for="comments">Comments*:</label>
+                <textarea name="text" id="comments" placeholder="Your Comments" cols="30"
+                    rows="10" required></textarea>
+                <br><br>
+
+                <input type="Submit" value="Submit My Form">
+                <input type="Reset">
+                <br><br>
+
+            </form>
+        </main>
+
+    </body>
+
+</html>
+
+

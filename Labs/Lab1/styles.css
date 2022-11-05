@@ -1,0 +1,8 @@
+.header {
+    align-items: center;
+}
+
+.gallery {
+    display: flex;
+    align-items: center;
+}

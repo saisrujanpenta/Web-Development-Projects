@@ -1,0 +1,85 @@
+body{
+  font-family: 'Josefin Sans', sans-serif;
+  display: flex;
+  justify-content: center;
+  background-color: #FFFAE7
+
+}
+
+
+.background-image {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.theme {
+  filter: brightness(0) invert(1);
+}
+
+
+.container {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 30px;
+  margin-top: 100px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  letter-spacing: 10px;
+}
+
+.new-todo {
+  background-color: #FFFAE7;
+  position: absolute;
+  margin: 200px;
+  height: 50px;
+  width: 500px;
+  border-radius: 10px;
+  display: flex;
+}
+
+.check {
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.check-mark {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #EEE3CB;
+}
+
+.new-todo-input {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.new-todo-input form {
+  flex-grow: 1;
+}
+
+.new-todo-input input {
+  width: 99%;
+  padding: 10px 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}

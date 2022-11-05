@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Feedback</title>
+
+	<style>
+		label {
+			float: left;
+			width: 150px;
+		}
+
+		#container {
+
+			width: 700px;
+			margin: auto;
+			background-color: beige;
+		}
+
+		main {
+			padding: 50px;
+		}
+
+		#option1 {
+			display: none;
+		}
+
+		#option2 {
+			display: none;
+		}
+
+		#option3 {
+			display: none;
+		}
+
+		#option4 {
+			display: none;
+		}
+
+		#option5 {
+			display: none;
+		}
+
+		#drinks {
+
+			display: none;
+		}
+
+		#food {
+			display: none;
+
+		}
+
+		table{
+		border-collapse: collapse;
+		background-color: beige;
+    	margin: 20px auto;
+	  	}
+
+	  	table, th, td {
+		border: 2px solid black;
+		padding: 5px;
+	 	}
+
+		#table{
+			display: none;
+		}
+
+	</style>
+</head>
+
+<body class="center">
+	<div id="container">
+
+		<main class="center">
+			<h2>Feedback</h2>
+			<h3>Love something? Hate something? Let us know!</h3>
+			Note : Fields marked with an asterisk(*) are mandatory
+			<br><br>
+			<form method="post" id="myForm">
+				<label>Title*:</label>
+				<input type="radio" name="title" id="miss" value="miss" required="required" />Miss
+				<input type="radio" name="title" id="mr" value="mr" required="required" />Mr.
+				<input type="radio" name="title" id="mrs" value="mrs" required="required" />Mrs.
+				<br><br>
+				<label for="firstName">First Name*:</label>
+				<input type="text" name="firstName" id="firstName" placeholder="First Name" required />
+				<br><br>
+
+				<div id="error_firstName" style="display: none; color: red;">
+					Invalid input! Only Text is allowed for this field.
+					<br><br>
+				</div>
+
+				<label for="lastName">Last Name*:</label>
+				<input type="text" name="lastName" id="lastName" placeholder="Last Name" required />
+				<br><br>
+
+				<div id="error_lastName" style="display: none; color: red;">
+					Invalid input! Only Text is allowed for this field.
+					<br><br>
+				</div>
+
+				<label for="emailId">Email Id*:</label>
+				<input type="text" name="emailId" id="emailId" placeholder="yourname@domain.com" required />
+				<br><br>
+
+				<div id="error_emailId" style="display: none; color: red;">
+					Invalid input! Email ID should have @northeastern.edu as domain.
+					<br><br>
+				</div>
+
+				<label for="phoneNumber">Phone Number*:</label>
+				<input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxx-xxx-xxxx" required />
+				<br><br>
+
+				<div id="error_phoneNumber" style="display: none; color: red;">
+					Invalid input! Please check again.
+					<br><br>
+				</div>
+
+				<label for="streetAddress1">Street Address 1*:</label>
+				<input type="text" name="streetAddress1" id="streetAddress1" placeholder="address" required />
+				<br><br>
+
+				<div id="error_streetAddress1" style="display: none; color: red;">
+					Invalid input! Please check again.
+					<br><br>
+				</div>
+
+				<label for="streetAddress2">Street Address 2:</label>
+				<input type="text" name="streetAddress2" id="streetAddress2" placeholder="address" />
+				<br><br>
+
+				<div id="error_streetAddress2" style="display: none; color: red;">
+					Invalid input! Please check again.
+					<br><br>
+				</div>
+
+				<label for="city">City*:</label>
+				<input type="text" name="city" id="city" placeholder="city" required />
+				<br><br>
+
+				<div id="error_city" style="display: none; color: red;">
+					Invalid input! Only Text is allowed for this field.
+					<br><br>
+				</div>
+
+				<label for="state">State*:</label>
+				<input type="text" name="state" id="state" placeholder="state" required />
+				<br><br>
+
+				<div id="error_state" style="display: none; color: red;">
+					Invalid input! Only Text is allowed for this field.
+					<br><br>
+				</div>
+
+				<label for="zipcode">ZipCode*:</label>
+				<input type="text" name="zipcode" id="zipcode" placeholder="xxxxxx" required />
+				<br><br>
+
+				<div id="error_zipcode" style="display: none; color: red;">
+					Invalid input! Only five digit number is allowed for this field.
+					<br><br>
+				</div>
+
+				<label for="rating">Rating*</label>
+				<select id="dropdown_rating" onchange="enableRadio(this)" required>
+					<option value="">Please Rate us! </option>
+					<option value="option1" id="one">1</option>
+					<option value="option2" id="one">2</option>
+					<option value="option3" id="one">3</option>
+					<option value="option4" id="one">4</option>
+					<option value="option5" id="one">5</option>
+				</select>
+				<br><br>
+				<div id="clg">
+					<div id="option1">
+						<p>Please let us know what you didn't like!</p>
+						<input type="radio" name="r1" id="radio1" unchecked onclick="textboxshow(1)" /> Drinks<br />
+						<input type="radio" name="r1" id="radio2" unchecked onclick="textboxshow(2)" /> Food<br />
+
+					</div>
+					<div id="option2">
+						<p>Please let us know what you didn't like!</p>
+						<input type="radio" name="r2" id="radio1" unchecked onclick="textboxshow(1)" /> Drinks<br />
+						<input type="radio" name="r2" id="radio2" unchecked onclick="textboxshow(2)" /> Food<br />
+
+					</div>
+					<div id="option3">
+						<p>Please let us know where we can improve!</p>
+						<input type="radio" name="r3" id="radio1" unchecked onclick="textboxshow(1)" /> Drinks<br />
+						<input type="radio" name="r3" id="radio2" unchecked onclick="textboxshow(2)" /> Food<br />
+
+					</div>
+					<div id="option4">
+						<p>Please let us know what you liked the most!</p>
+						<input type="radio" name="r4" id="radio1" onclick="textboxshow(1)" /> Drinks<br />
+						<input type="radio" name="r4" id="radio2" onclick="textboxshow(2)" /> Food<br />
+
+					</div>
+					<div id="option5">
+						<p>Please let us know what you liked the most!</p>
+						<input type="radio" name="r5" id="radio1" onclick="textboxshow(1)" /> Drinks<br />
+						<input type="radio" name="r5" id="radio2" onclick="textboxshow(2)" /> Food<br />
+
+					</div>
+				</div>
+					<br>
+					<div id=txt>
+						<input type="text" id="drinks" placeholder="Enter your comments on drinks" style="width:200px; height:50px">
+
+						<input type="text" id="food" placeholder="Enter your comments on food">
+						<br>
+					</div>
+
+					<label for="zipcode">How did you hear?*:</label>
+					<input type='checkbox' name="source" value="facebook" /> Facebook
+					<input type='checkbox' name="source" value="google" /> Google
+					<input type='checkbox' name="source" value="yelp" /> Yelp
+					<br><br>
+
+					<label for="comments" required>Comments*:</label>
+					<textarea name="text" id="comments" placeholder="Your comments" rows="5" cols="25"
+						required></textarea>
+					<br><br>
+					<input type="Submit" onclick="func()" name="sumbit">
+					<input type="Reset">
+					<br><br>
+				
+			</form>
+
+
+
+			<script src="script.js"></script>
+		</main>
+	</div>
+
+</body>
+<table id="table">
+	<tr>
+
+		<th>Firse Name</th>
+		<th>Last Name</th>
+		<th>Email</th>
+		<th>Phone Number</th>
+		<th>Street Address 1</th>
+		<th>Street Address 2</th>
+		<th> City</th>
+		<th>State</th>
+		<th>Zip Code</th>
+		<th>Comment</th>
+
+	</tr>
+</table>
+
+</html>

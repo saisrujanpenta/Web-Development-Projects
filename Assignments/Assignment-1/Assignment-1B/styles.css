@@ -1,0 +1,250 @@
+body {
+    margin: 0;
+    padding: 0; 
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.header {
+    background-color: #b33b49;
+    margin-left: 0%;
+    margin-right: 0%;
+    padding: 0 0 0 0;
+    width: 100%;
+    height: 100px;
+    
+}
+
+
+.logo {
+    position: absolute;
+    padding: 0.8%;
+    width:80px;
+    height:80px;
+}
+
+.backgroundimage {
+    width: 100%;
+    height: 600px;
+    filter: brightness(50%);
+}
+
+.top-container {
+    position: relative;
+    text-align: center;
+    color: white;
+    height: 600px;
+}
+
+.title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Calligraffitti', cursive;
+    font-size: 180px;
+}
+
+.subtitle {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Dosis', sans-serif;
+    font-size: 30px;
+    letter-spacing: 4px;
+    word-spacing: 10px;
+}
+
+.second-container {
+    width: 100%;
+    height: 50%;
+    display: inline-block;
+}
+
+.sc-title {
+    background-color: #b33b49;
+    margin: 0px;
+    width: 100%;
+    height: 70px;
+    padding-top: 30px;
+    font-family: 'Dosis', sans-serif;
+    font-size: 30px;
+    letter-spacing: 4px;
+    word-spacing: 10px;
+    color: antiquewhite;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+
+
+
+#container {
+  width: 100%;
+  display: inline-block;
+  padding-left: 320px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-decoration: none;
+}
+
+.gallery {
+  display: inline-block;
+  width: 250px;
+  padding: 20px;
+  margin: 20px;
+  border: 1px #b33b49;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-family: 'Dosis', sans-serif;
+}
+
+.gallery img {
+  width: 250px;
+  height: 250px;
+  text-decoration: none;
+  font-family: 'Dosis', sans-serif;
+}
+
+.gallery:hover {
+  cursor: pointer;
+  border-radius: 25px;
+  box-shadow: 5px -5px grey;
+  border: 1px solid #b33b49;
+  font-family: 'Dosis', sans-serif;
+  text-decoration: none;
+}
+
+.description {
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Dosis', sans-serif;
+}  
+
+.detailtag {
+  padding: 0px 40px 40px 20px;
+}
+
+.detailtag:hover {
+  cursor: pointer;
+}
+mark{
+  background-color: #b33b49;
+  color: antiquewhite;
+}
+
+  .footer {
+    background-color: #b33b49;
+    margin-left: 0%;
+    margin-right: 0%;
+    padding: 0 0 0 0;
+    width: 100%;
+    height: 150px;  
+    text-align: center; 
+    word-spacing: 20px;
+}
+
+.footertext {
+    align-items: center;
+    font-family: 'Dosis', sans-serif;
+    color: antiquewhite;
+    padding: 20px;
+}
+
+.footer-icons {
+    align-items: center;
+    padding: 20px;
+    padding-top: 120px;
+}
+
+
+/***********************************Places to Visit**************************************/
+
+.placestovisit {
+  width: 100%;
+  height: 150px;
+  text-align: center;
+  align-items: center;
+  background-color: #b33b49;
+  font-family: 'Dosis', sans-serif;
+  color: antiquewhite;
+
+}
+h2{
+  margin: 0%;
+  text-align: center;
+  padding-top: 35px;
+  align-items: center;
+  letter-spacing: 5px;
+  color: antiquewhite;
+  font-family: 'Dosis', sans-serif;
+}
+
+.image1 {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 50%;
+  margin: auto;
+  font-family: 'Dosis', sans-serif;
+}
+
+.image2 {
+  padding-bottom: 50px;
+  width: 50%;
+  margin: auto;
+  font-family: 'Dosis', sans-serif;
+}
+
+.image3 {
+  padding-bottom: 50px;
+  width: 50%;
+  margin: auto;
+  font-family: 'Dosis', sans-serif;
+}
+
+p {
+text-align: center;
+font-family: 'Dosis', sans-serif;
+}
+
+.dontmiss {
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  align-items: center;
+  background-color: #b33b49;
+  font-family: 'Dosis', sans-serif;
+  color: antiquewhite;
+}
+
+.video {
+  display: inline-block;
+  margin-left: 126.33px;
+  margin-right: 126.33px;
+  align-items: center;
+  padding-bottom: 100px;
+  font-family: 'Dosis', sans-serif;
+}
+
+.song {
+  padding-left: 370px;
+  padding-top: 50px;
+}
+
+
+/***************************************FoodtoExplore********************************************/
+
+.foodtoexplore {
+  width: 100%;
+  height: 150px;
+  text-align: center;
+  align-items: center;
+  background-color: #b33b49;
+  font-family: 'Dosis', sans-serif;
+  color: antiquewhite;
+
+}

@@ -1,0 +1,80 @@
+/********************************Contact Us Page Styling********************************************/
+
+body {
+    font-family: $font-stack;
+    width: 100%;
+    height: 100%;
+    margin:0%
+  }
+  
+* {
+    box-sizing: border-box;
+    margin: 0%;
+  }
+
+  .container {
+    background-color: #fff;
+    padding: 10px;
+    width: 100%;
+
+    .cuheader {
+        background-color: $bg-color;
+        width: 100%;
+        height: 100px;
+        margin: 0%;
+      }
+      h2 {
+        padding-top: 10px;
+        margin: 0;
+      }
+      
+      .row {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        margin: 0%;
+      }
+
+      // .column {
+      //   // float: left;
+      //   display: none;
+      //   width: 50%;
+      //   margin-top: 30px;
+      //   padding: 20px;
+      // }
+    
+      // .column2 {
+      //   // float: left;
+      //   display: none;
+      //   width: 65%;
+      //   margin-top: 6px;
+      //   padding-left: 200px;
+      // }
+  }
+
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  input[type=submit] {
+    background-color: $bg-color;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #fff;
+    color: #333;
+  }
+                                                    // CSSgrid
+  .row:after {
+    content: "";
+    display: left;
+    clear: both;
+  }

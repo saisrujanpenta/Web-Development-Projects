@@ -1,0 +1,48 @@
+body {
+    height: 1000px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-image: linear-gradient(to bottom right, rgba(156, 225, 208, 0.829), rgb(240, 247, 243));
+}
+
+.heading {
+    padding: 50px 535px;
+    font-family: 'poppins';
+    font-size: larger;
+    letter-spacing: 15px;
+    color: rgb(51, 56, 55);
+}
+
+.heading label{
+    font-size: 40px;
+    padding-right: 40px;
+}
+
+.timeBar {
+    padding: 30px 520px;
+    font-family: 'poppins';
+}
+
+th, td {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 40px;
+  }
+
+.buttonBar {
+    padding: 10px 555px;
+    font-family: 'poppins';
+    display: block;
+    width: 100%;
+}
+
+.btn {
+    width: 100px;
+    height: 30px;
+    background-color: rgb(51, 56, 55);
+    color: aliceblue;
+    border-radius: 5px;
+
+}
+
