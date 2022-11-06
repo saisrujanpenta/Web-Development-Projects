@@ -30,6 +30,6 @@ var Sample = require('./models/sample');
        // frontend routes =========================================================
        // route to handle all angular requests
        app.get('/', function(req, res) {
-           res.sendFile('D:\NEU\Fall2022\WebDev\Labs\NODEJSLAB\public\views\index.html'); // load our public/index.html file
+           res.sendFile('D:/NEU/Fall2022/WebDev/Labs/NODEJSLAB/public/views/index.html'); // load our public/index.html file
        });
    };

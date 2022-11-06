@@ -21,16 +21,9 @@
     padding-left: 800px;
 }
 
-footer {
-    height: 120vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Montserrat', sans-serif;
-}
 
 .section1{
-    height: 100vh;
+    /* height: 100vh; */
     background-color: #1c1a27;
     /* position: relative; */
 }
@@ -117,6 +110,231 @@ footer {
     top: 65%;
     left: 0%;
 }
+
+/* About Section Styling */
+
+#About{
+    height: 100vh;
+    background-color: #dbdcd7 ;
+    /* background-image: url(/MyProjects/Portfolio/Assets/Aboutbg.png);
+    background-repeat: no-repeat;
+    background-position: center; */
+}
+
+
+h2.sectiontitle{
+    text-align: center;
+    color: #801357;
+    font-weight: bolder;
+    letter-spacing: 30px;
+}
+
+h6.About_content{
+    text-align: left;
+    padding: 0 120px;
+    line-height: 30px;
+
+}
+
+.diffcolor{
+    color:#e7627d;
+    font-size: 20px;
+}
+
+/* Experience Section Styling */
+
+.timeline-section{
+    background-color: #dbdcd7;
+    min-height: 100vh;
+    padding: 100px 15px;
+}
+
+.timeline-items{
+    max-width: 1000px;
+    background-color: transparent;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.timeline-items::before{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: #801357;
+    left: calc(50% - 1px);
+}
+
+.timeline-item{
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.timeline-item:last-child{
+    margin-bottom: 0;
+}
+
+.timeline-item:nth-child(odd){
+    padding-right: calc(50% + 30px);
+    text-align: right;
+}
+
+.timeline-item:nth-child(even){
+    padding-left: calc(50% + 30px);
+}
+
+.timeline-dot1{
+    height: 16px;
+    width: 16px;
+    background-color: #e7627d;
+    position: absolute;
+    left: calc(50% - 8px);
+    border-radius: 50%;
+    top: 10px;
+}
+
+.timeline-dot2{
+    height: 16px;
+    width: 16px;
+    background-color: #e7627d;
+    position: relative;
+    /* left: calc(50% - 8px); */
+    left: calc(50% - 273px);
+    border-radius: 50%;
+    top: 10px;
+}
+
+.timeline-dot3{
+    height: 16px;
+    width: 16px;
+    background-color: #e7627d;
+    position: relative;
+    /* left: calc(50% - 8px); */
+    left: calc(50% + 257px);
+    border-radius: 50%;
+    top: 10px;
+}
+
+.timeline-date{
+    font-size: 18px;
+    color: #e7627d;
+    margin: 6px 0 15px;
+}
+
+.timeline-content{
+    background-color: #3d1635;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.timeline-content h3{
+    font-size: 20px;
+    color: #ffff;
+    margin: 0 0 10px;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+.timeline-content h6{
+    color: #e4aab5;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+}
+
+/* Projects Section Styling */
+
+.projects_section{
+    height: 100vh;
+    background-color: #dbdcd7;
+    display: grid;
+    place-items: center center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    padding: 60px;
+    grid-gap: 40px;
+}
+
+.card{
+    background-color: #801357;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.18);
+}
+
+.container{
+    /* position: relative; */
+    clip-path: polygon(0 0,100% 0, 100% 85%, 0 100%);
+    /* background-color: transparent; */
+}
+
+.card .container img{
+    width: 100%;
+    display: block;
+    border-radius: 20px 20px 0 0;
+}
+
+.container:after{
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 20px 20px 0 0;
+    opacity: 0.7;
+}
+
+
+
+.card1>.container:after{
+    /* background-image: linear-gradient(135deg, #0100ec, #fb36f4); */
+    background-image: linear-gradient(to top,#801357 61%, #3d1635 74%);
+}
+
+.card2>.container:after{
+    /* background-image: linear-gradient(135deg, #0100ec, #fb36f4); */
+    background-image: linear-gradient(to top,#801357 61%, #3d1635 74%);
+}
+
+.card3>.container:after{
+    /* background-image: linear-gradient(135deg, #0100ec, #fb36f4); */
+    background-image: linear-gradient(to top,#801357 61%, #3d1635 74%);
+}
+
+.details{
+    padding: 20px 10px;
+}
+
+.details>h3{
+    color: #801357;
+    font-weight: 600;
+    font-size: 18px;
+    margin: 10px 0 15px 0;
+}
+
+.details>h6{
+    color: #e4aab5;
+    font-size: 15px;
+    line-height: 30px;
+    font-weight: 400;
+}
+
+
+footer {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #dbdcd7;
+}
+
 
 
 
