@@ -4,16 +4,16 @@ Flexbox
 
 Variables					DONE
 
-    Background and container colors are defined as variables to use them at various locations.
+    Background for header and container colors are defined as variables to use them at various locations.
 
 
 Nesting					    DONE
 
-    Nesting is used all over the CSS page. 
+    Nesting is used all over the CSS file. 
 
 Interpolation and Mixins	DONE
 
-    This is used for the header class color, margins to the right and left. The variables were declared 
+    This is used for the header color, margins to the right and left. The variables were declared 
     in the mixin and interpolation and then called in wherever needed.
 
 Placeholder Selectors       DONE
