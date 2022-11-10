@@ -1,3 +1,7 @@
+Flexbox
+
+    Flexbox is used in index.html inorder to showcase the customer reviews.
+
 Variables					DONE
 
     Background and container colors are defined as variables to use them at various locations.
