@@ -26,6 +26,9 @@
 .body {
     margin: 0;
     @extend %paddingandwidth;
+    //function
+    background-color: $bg-color;
+    color: set-text-color($bg-color);
 }
 
 .header {
@@ -130,7 +133,7 @@
     background-color: $containercolor;
 
     // background-color: $containercolor;
-    color: set-text-color($color);
+    color: set-text-color($containercolor);
     .sc-title {
         background-color: $bg-color;
         margin-left: 0%;
@@ -204,6 +207,7 @@
         text-align: left;
         width: 800px;
         font-family: $font-stack;
+        
       } 
     
       th {
