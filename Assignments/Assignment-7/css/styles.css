@@ -61,6 +61,7 @@ body {
   width: 100%;
   height: 100%;
   margin: 0%;
+  padding: 0%;
 }
 
 * {
@@ -70,7 +71,6 @@ body {
 
 .container {
   background-color: #fff;
-  padding: 10px;
   width: 100%;
 }
 .container .cuheader {
@@ -210,8 +210,8 @@ input[type=submit]:hover {
 
 .second-container {
   width: 100%;
-  background-color: rgb(24, 23, 23);
-  color: #fff;
+  background-color: #fff;
+  color: #333;
 }
 .second-container .sc-title {
   background-color: #b4b8a6;
@@ -249,7 +249,7 @@ input[type=submit]:hover {
 }
 
 .third-container {
-  background-color: rgb(24, 23, 23);
+  background-color: #fff;
 }
 .third-container .tc-title {
   background-color: #b4b8a6;
