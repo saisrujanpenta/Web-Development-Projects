@@ -1,8 +1,9 @@
 // const User = require('../models/User')
 const User = require('../models/User')
 
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
+// const hashedPass = 10;
 
 //Show the list of users
 
@@ -40,18 +41,19 @@ const show = (req, res, next) => {
 //add new user
 
 const store = (req, res, next) => {
-    bcrypt.hash(req.body.password, 10, function(err, hashedPass) {
-        if(err) {
-            res.json({
-                error: err
-            })
-        }
-    })
+// const hashedPass = bcrypt.hash(req.body.password);
+    // bcrypt.hash(req.body.password, 10, function(err, hashedPass) {
+    //     if(err) {
+    //         res.json({
+    //             error: err
+    //         })
+    //     }
+    // })
 
     let user = new User({
         name: req.body.name,
         email: req.body.email,
-        password: hashedPass
+        password: req.body.password
     })
 
 user.save()
