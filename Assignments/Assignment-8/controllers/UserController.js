@@ -87,12 +87,12 @@ const destroy = (req, res, next) => {
     let userID = req.body.userID
     User.findOneAndRemove(userID)
     .then(() => {
-        req.json({
+        res.json({
             message: 'User deleted successfully!'
         })
     })
     .catch(error => {
-        req.json({
+        res.json({
             message: 'An error occurred!'
         })
     })
