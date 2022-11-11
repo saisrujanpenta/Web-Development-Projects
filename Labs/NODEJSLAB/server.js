@@ -2,6 +2,9 @@
 var express        = require('express');
 var app            = express();
 var bodyParser     = require('body-parser');
+
+const AuthRoute = require('./routes/auth')
+
 //var methodOverride = require('method-override');
 var mongoose       = require('mongoose');
 // configuration ===========================================
@@ -31,3 +34,6 @@ app.listen(port);
 console.log('App started at port ' + port);
 // expose app
 exports = module.exports = app;
+
+
+app.use('/api', AuthRoute)
