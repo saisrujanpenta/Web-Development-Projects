@@ -176,8 +176,8 @@ app.delete("/user/delete", async (req, res) => {
     const user = await User.findOne({ email: req.body.email });
   
     if (user) {
-      const passCompare = await bcrypt.compare(req.body.password, user.password);
-      if (passCompare) {
+    //   const passCompare = await bcrypt.compare(req.body.password, user.password);
+    //   if (passCompare) {
         User.findByIdAndDelete(user._id)
           .then(item => {
             if (!item) {
@@ -195,16 +195,21 @@ app.delete("/user/delete", async (req, res) => {
               message: "Could not delete User with email=" + user.email
             });
           });
-      } else {
-        res.status(404).send({
-          message: `Password incorrect entered, please retry.`
-        });
-      }
-    } else {
-      res.status(404).send({
-        message: `User was not found! Please check the email address.`
-      });
-    }
+        }else{
+            res.status(404).send({
+                message:`Email ID does not exist`
+            });
+        }
+    //   } else {
+    //     res.status(404).send({
+    //       message: `Password incorrect entered, please retry.`
+    //     });
+    //   }
+    // } else {
+    //   res.status(404).send({
+    //     message: `User was not found! Please check the email address.`
+    //   });
+    // }
   });
   
   // Get all users
