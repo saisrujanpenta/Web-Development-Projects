@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
   bodyParser = require("body-parser");
 const PORT = process.env.PORT || 3005;
 
-const EncryptedPasswords = 10;
+const saltRounds = 10;
 
 app.use(express.json());
 
@@ -21,7 +21,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/testdb',{useNewUrlParser: true,useUn
     if (err) {
       console.log(err);
     } else {
-      console.log("Database Connection Successfull");
+      console.log("Database Connection Successfull!");
     }
   }
 );
@@ -76,7 +76,7 @@ app.post("/user/create", async (req, res) => {
         }
   
         if (passBool && emailBool) {
-          const hashedPassword = await bcrypt.hash(req.body.password, EncryptedPasswords);
+          const hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
           const innerResult = await User.create({
             name: req.body.name,
             email: req.body.email,
@@ -138,7 +138,7 @@ app.put("/user/edit", async (req, res) => {
           if (checkPassword(req.body.new_password)
             //   && req.body.new_password == req.body.confirm_new_password
           ) {
-            const newPassword = await bcrypt.hash(req.body.new_password, EncryptedPasswords);
+            const newPassword = await bcrypt.hash(req.body.new_password, saltRounds);
             User.findByIdAndUpdate(user._id, { password: newPassword }, { useFindAndModify: false })
               .then(data => {
                 if (!data) {
@@ -169,3 +169,59 @@ app.put("/user/edit", async (req, res) => {
       });
     }
   });
+
+  // Delete user
+app.delete("/user/delete", async (req, res) => {
+
+    const user = await User.findOne({ email: req.body.email });
+  
+    if (user) {
+      const passCompare = await bcrypt.compare(req.body.password, user.password);
+      if (passCompare) {
+        User.findByIdAndDelete(user._id)
+          .then(item => {
+            if (!item) {
+              res.status(404).send({
+                message: `Cannot delete User with email=${user.email}. User not found!`
+              });
+            } else {
+              res.send({
+                message: `User with email id ${user.email} was deleted successfully!`
+              });
+            }
+          })
+          .catch(err => {
+            res.status(500).send({
+              message: "Could not delete User with email=" + user.email
+            });
+          });
+      } else {
+        res.status(404).send({
+          message: `Password incorrect entered, please retry.`
+        });
+      }
+    } else {
+      res.status(404).send({
+        message: `User was not found! Please check the email address.`
+      });
+    }
+  });
+  
+  // Get all users
+  app.get("/user/getAll", async (req, res) => {
+  
+    User.find({}, function (err, users) {
+      users.forEach(user => delete user.password);
+      const newResult = users.map(item => {
+        return {
+          id: item._id,
+          email: item.email,
+          password: item.password
+        }
+      })
+      res.send(newResult);
+    });
+  
+  });
+
+  module.exports = app;
