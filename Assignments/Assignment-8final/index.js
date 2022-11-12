@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
   bodyParser = require("body-parser");
 const PORT = process.env.PORT || 3005;
 
-const saltRounds = 10;
+const EncryptedPasswords = 10;
 
 app.use(express.json());
 
@@ -32,4 +32,140 @@ const userSchema = new mongoose.Schema({
     email: String,
     password: String,
     joined: { type: Date, default: Date.now },
+  });
+
+  const User = mongoose.model("user", userSchema);
+  app.get("/", (req, res) => {
+    res.send("Welcome to WebDevelopment Assignment");
+  });
+
+
+// Create new User - POST
+app.post("/user/create", async (req, res) => {
+    try {
+  
+      let user = await User.findOne({ email: req.body.email });
+      let nameBool, passBool, emailBool = false;
+  
+      if (user) {
+        res.status(400).send({ message: "We already have your Email Address with us!" });
+      } else {
+        if (validateName(req.body.name)) {
+          nameBool = true;
+        } else {
+          nameBool = false;
+          res.status(400).send({ message: "Name should start only with alphabet!" })
+        }
+  
+        if (validateEmail(req.body.email)) {
+          // console.log("Proper email address");
+          emailBool = true;
+        } else {
+          emailBool = false;
+          res.status(400).send({ message: "Please enter a valid Email Address" });
+        }
+  
+        if (checkPassword(req.body.password)
+          //   && (req.body.password == req.body.confirm_password)
+        ) {
+          passBool = true;
+          // console.log("Password is correct");
+        } else {
+          passBool = false;
+          res.status(400).send({ message: "Please enter a valid password!" });
+        }
+  
+        if (passBool && emailBool) {
+          const hashedPassword = await bcrypt.hash(req.body.password, EncryptedPasswords);
+          const innerResult = await User.create({
+            name: req.body.name,
+            email: req.body.email,
+            password: hashedPassword,
+            user_type: req.body.user_type
+          });
+          res.status(201).send(innerResult);
+        }
+      }
+    } catch (error) {
+      console.log(error);
+      res.status(500).send({ message: "Unexpected Error occurred!" });
+    }
+  
+  })
+
+
+  // Update user - PUT
+app.put("/user/edit", async (req, res) => {
+
+    const user = await User.findOne({ email: req.body.email });
+  
+    if (user) {
+      const passCompare = await bcrypt.compare(req.body.password, user.password);
+      if (passCompare) {
+  
+        if (req.body.new_email != undefined && req.body.new_password != undefined
+          // && req.body.confirm_new_password != undefined
+        ) {
+          res.status(400).send({ message: "Please provide either new email or new password parameters only!" });
+        } else if (req.body.new_email != undefined && req.body.new_password == undefined
+          // && req.body.confirm_new_password == undefined
+        ) {
+          // console.log("Update new email");
+          if (validateEmail(req.body.new_email)) {
+            // console.log("Seems good");
+            User.findByIdAndUpdate(user._id, { email: req.body.new_email }, { useFindAndModify: false })
+              .then(data => {
+                if (!data) {
+                  res.status(404).send({
+                    message: `${user._id} is not in the database.Please enter a valid userID!`
+                  });
+                } else {
+                  res.send({ message: "Email Address Update Successful!" })
+                };
+              })
+              .catch(err => {
+                res.status(500).send({
+                  message: "Cannot Update details of the User ID" + user._id
+                });
+              });
+          } else {
+            res.status(400).send({ message: "Please enter a valid new Email Address!" });
+          }
+        } else if (req.body.new_email == undefined && req.body.new_password != undefined
+          // && req.body.confirm_new_password != undefined
+        ) {
+          // console.log("Update new password");
+          if (checkPassword(req.body.new_password)
+            //   && req.body.new_password == req.body.confirm_new_password
+          ) {
+            const newPassword = await bcrypt.hash(req.body.new_password, EncryptedPasswords);
+            User.findByIdAndUpdate(user._id, { password: newPassword }, { useFindAndModify: false })
+              .then(data => {
+                if (!data) {
+                  res.status(404).send({
+                    message: `${user._id} is not in the database.Please enter a valid userID!`
+                  });
+                } else res.send({ message: "Password Update Successfull!" });
+              })
+              .catch(err => {
+                res.status(500).send({
+                  message: "Cannot Update details of the User ID" + user._id
+                });
+              });
+          } else {
+            res.status(400).send({ message: "Please enter a valid password!" });
+          }
+        } else {
+          res.status(400).send({ message: "Please provide either the new email or new password!" });
+        }
+      } else {
+        res.status(404).send({
+          message: `Incorrect password! Please retry!`
+        });
+      }
+    } else {
+      res.status(404).send({
+        message: `User was not found! Please check the email address.`
+      });
+    }
   });
