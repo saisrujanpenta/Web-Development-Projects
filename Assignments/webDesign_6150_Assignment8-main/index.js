@@ -5,7 +5,7 @@ const app = express();
 const mongoose = require("mongoose");
 bcrypt = require("bcrypt"),
   bodyParser = require("body-parser");
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 3000;
 
 const saltRounds = 10;
 
@@ -203,6 +203,7 @@ app.get("/user/getAll", async (req, res) => {
     const newResult = users.map(item => {
       return {
         id: item._id,
+        name: item.name,
         email: item.email,
         password: item.password
       }

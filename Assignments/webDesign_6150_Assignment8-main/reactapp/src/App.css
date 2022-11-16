@@ -7,6 +7,15 @@
   pointer-events: none;
 }
 
+.container{
+  padding: 120px 150px 143px 400px;
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+}
+
+.container .form-control{
+  width: 300px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

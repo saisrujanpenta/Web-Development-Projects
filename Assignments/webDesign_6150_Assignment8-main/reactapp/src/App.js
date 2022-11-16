@@ -3,7 +3,8 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
+      <h2>Login</h2><br></br>
       <form>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Email address</label>
