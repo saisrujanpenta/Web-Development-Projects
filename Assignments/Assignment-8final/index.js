@@ -75,7 +75,7 @@ app.post("/user/create", async (req, res) => {
           res.status(400).send({ message: "Please enter a valid password!" });
         }
   
-        if (passBool && emailBool) {
+        if (nameBool && passBool && emailBool) {
           const hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
           const innerResult = await User.create({
             name: req.body.name,
@@ -106,21 +106,21 @@ app.put("/user/edit", async (req, res) => {
         if (req.body.new_email != undefined && req.body.new_password != undefined
           // && req.body.confirm_new_password != undefined
         ) {
-          res.status(400).send({ message: "Please provide either new email or new password parameters only!" });
-        } else if (req.body.new_email != undefined && req.body.new_password == undefined
+          res.status(400).send({ message: "Please provide either new name or new password parameters only!" });
+        } else if (req.body.new_email != undefined || req.body.new_password == undefined
           // && req.body.confirm_new_password == undefined
         ) {
           // console.log("Update new email");
-          if (validateEmail(req.body.new_email)) {
+          if (validateName(req.body.new_name)) {
             // console.log("Seems good");
-            User.findByIdAndUpdate(user._id, { email: req.body.new_email }, { useFindAndModify: false })
+            User.findByIdAndUpdate(user._id, { name: req.body.new_name }, { useFindAndModify: false })
               .then(data => {
                 if (!data) {
                   res.status(404).send({
                     message: `${user._id} is not in the database.Please enter a valid userID!`
                   });
                 } else {
-                  res.send({ message: "Email Address Update Successful!" })
+                  res.send({ message: "Name Update Successful!" })
                 };
               })
               .catch(err => {
@@ -129,9 +129,9 @@ app.put("/user/edit", async (req, res) => {
                 });
               });
           } else {
-            res.status(400).send({ message: "Please enter a valid new Email Address!" });
+            res.status(400).send({ message: "Please enter a valid new Name!" });
           }
-        } else if (req.body.new_email == undefined && req.body.new_password != undefined
+        } else if (req.body.new_name == undefined || req.body.new_password != undefined
           // && req.body.confirm_new_password != undefined
         ) {
           // console.log("Update new password");
@@ -171,45 +171,33 @@ app.put("/user/edit", async (req, res) => {
   });
 
   // Delete user
-app.delete("/user/delete", async (req, res) => {
+  app.delete("/user/delete", async (req, res) => {
 
     const user = await User.findOne({ email: req.body.email });
   
     if (user) {
-    //   const passCompare = await bcrypt.compare(req.body.password, user.password);
-    //   if (passCompare) {
-        User.findByIdAndDelete(user._id)
-          .then(item => {
-            if (!item) {
-              res.status(404).send({
-                message: `Cannot delete User with email=${user.email}. User not found!`
-              });
-            } else {
-              res.send({
-                message: `User with email id ${user.email} was deleted successfully!`
-              });
-            }
-          })
-          .catch(err => {
-            res.status(500).send({
-              message: "Could not delete User with email=" + user.email
-            });
-          });
-        }else{
+      User.findByIdAndDelete(user._id)
+        .then(item => {
+          if (!item) {
             res.status(404).send({
-                message:`Email ID does not exist`
+              message: `Cannot delete User with email=${user.email}. User not found!`
             });
-        }
-    //   } else {
-    //     res.status(404).send({
-    //       message: `Password incorrect entered, please retry.`
-    //     });
-    //   }
-    // } else {
-    //   res.status(404).send({
-    //     message: `User was not found! Please check the email address.`
-    //   });
-    // }
+          } else {
+            res.send({
+              message: `User with email id ${user.email} was deleted successfully!`
+            });
+          }
+        })
+        .catch(err => {
+          res.status(500).send({
+            message: "Could not delete User with email=" + user.email
+          });
+        });
+    } else {
+      res.status(404).send({
+        message: `Email ID does not exist`
+      });
+    }
   });
   
   // Get all users
