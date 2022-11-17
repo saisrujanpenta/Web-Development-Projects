@@ -1,6 +1,7 @@
 const { validateName, validateEmail, checkPassword } = require("./validations");
 
 const express = require("express");
+// const app = express.Router();
 const app = express();
 const mongoose = require("mongoose");
 bcrypt = require("bcrypt"),
@@ -212,6 +213,144 @@ app.get("/user/getAll", async (req, res) => {
   });
 
 });
+
+
+///Login page
+
+// app.post('user/login', function(req, res){
+//   let result = users.find(user => item.email == req.body.email);
+//   if(result) {
+//     if(result.password == req.body.password) {
+//       res.status(200).send({
+//         message: "Successfull Login!"
+//       })
+//     }else{
+//       res.status(200).send({
+//         message: "Password Incorrect!"
+//       })
+//     }
+//   }else{
+//     res.status(200).send({
+//       message: "User not found!"
+//     })
+//   }
+// })
+
+
+//login
+
+// app.post("/user/login", async (req, res) => {
+//   const user = await User.find(user => item.email == req.body.email);
+//   if(user) {
+//     if(user.password == req.body.password) {
+//       res.status(200).send({
+//         message: "Successfull Login!"
+//       })
+//     }else{
+//       res.status(200).send({
+//         message: "Password Incorrect!"
+//       })
+//     }
+//   }else{
+//     res.status(200).send({
+//       message: "User not found!"
+//     })
+//   }
+// })
+
+
+app.post("/user/login", async (req, res) => {
+  // try {
+
+  //   let user = await User.findOne({ email: req.body.email });
+  //   // let passBool, emailBool = false;
+
+  //   if (!user) {
+  //     res.status(400).send({ message: "We don't have an account with you!" });
+  //   } else {
+  //     if (user) {
+  //       const passCompare = await bcrypt.compare(req.body.password, user.password);
+  //       if (passCompare) {
+  //           if(user.password != req.body.password){ 
+  //               res.status(200).send({
+  //               message: "Password Incorrect!"
+  //               })
+  //             }
+  //               else{
+  //               res.status(200).send({
+  //               message: "Login Successful!"
+  //               })
+  //             }
+  //       }else{}}else{}
+
+  //     }
+
+      
+  //     } catch (error) {
+  //       console.log(error);
+  //       res.status(500).send({ message: "Internal Server Error Occurred!" });
+  //     }
+
+  const email = req.body.email
+  const password = req.body.password
+
+  //find user exist or not
+  User.findOne({ email })
+      .then(user => {
+          //if user not exist than return status 400
+          if (!user) return res.status(400).json({ msg: "User does not exist" })
+
+          //if user exist than compare password
+          //password comes from the user
+          //user.password comes from the database
+          bcrypt.compare(password, user.password, (err, data) => {
+              //if error than throw error
+              if (err) throw err
+
+              //if both match than you can do anything
+              if (data) {
+                  return res.status(200).json({ msg: "Login success" })
+              } else {
+                  return res.status(401).json({ msg: "Invalid credentials!" })
+              }
+
+          })
+
+      })
+
+
+
+
+
+
+          
+
+//       if (checkPassword(req.body.password)) {
+//         passBool = true;
+//         // console.log("Password is correct");
+//       } else {
+//         passBool = false;
+//         res.status(400).send({ message: "Please enter a strong password, It should contain 1 small,1 capital, 1 digit and 1 special character in it" });
+//       }
+
+//       if (nameBool && passBool && emailBool) {
+//         const hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
+//         const innerResult = await User.create({
+//           name: req.body.name,
+//           email: req.body.email,
+//           password: hashedPassword,
+//           user_type: req.body.user_type
+//         });
+//         res.status(201).send(innerResult);
+//       }
+//     }
+//   } catch (error) {
+//     console.log(error);
+//     res.status(500).send({ message: "Internal Server Error Occurred!" });
+//   }
+
+})
+
 
 
 module.exports = app;

@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 
+const PORT = process.env.PORT || 3000;
+
 function App() {
   return (
     <div className="container">
