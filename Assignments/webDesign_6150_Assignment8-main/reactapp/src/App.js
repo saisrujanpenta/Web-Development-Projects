@@ -1,5 +1,8 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
+
+
 
 const PORT = process.env.PORT || 3000;
 
@@ -7,7 +10,7 @@ function App() {
   return (
     <div className="container">
       <h2>Login</h2><br></br>
-      <form>
+      <form onSubmit={(e) => login(e)}>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Email address</label>
           <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
@@ -21,6 +24,21 @@ function App() {
       </form>
     </div>
   );
+}
+
+function login() {
+  e.preventDefault();
+  let request = {
+    email: document.getElementById('exampleInputEmail1').value,
+    password: document.getElementById('exampleInputPassword1').value
+  }
+  axios.post('http://localhost:3000/user/login', request)
+  .then( resp => {
+    alert(resp.data.message);
+  })
+  .catch( err => {
+    console.log(err);
+  })
 }
 
 export default App;

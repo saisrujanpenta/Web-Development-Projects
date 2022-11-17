@@ -217,80 +217,8 @@ app.get("/user/getAll", async (req, res) => {
 
 ///Login page
 
-// app.post('user/login', function(req, res){
-//   let result = users.find(user => item.email == req.body.email);
-//   if(result) {
-//     if(result.password == req.body.password) {
-//       res.status(200).send({
-//         message: "Successfull Login!"
-//       })
-//     }else{
-//       res.status(200).send({
-//         message: "Password Incorrect!"
-//       })
-//     }
-//   }else{
-//     res.status(200).send({
-//       message: "User not found!"
-//     })
-//   }
-// })
-
-
-//login
-
-// app.post("/user/login", async (req, res) => {
-//   const user = await User.find(user => item.email == req.body.email);
-//   if(user) {
-//     if(user.password == req.body.password) {
-//       res.status(200).send({
-//         message: "Successfull Login!"
-//       })
-//     }else{
-//       res.status(200).send({
-//         message: "Password Incorrect!"
-//       })
-//     }
-//   }else{
-//     res.status(200).send({
-//       message: "User not found!"
-//     })
-//   }
-// })
-
-
 app.post("/user/login", async (req, res) => {
-  // try {
-
-  //   let user = await User.findOne({ email: req.body.email });
-  //   // let passBool, emailBool = false;
-
-  //   if (!user) {
-  //     res.status(400).send({ message: "We don't have an account with you!" });
-  //   } else {
-  //     if (user) {
-  //       const passCompare = await bcrypt.compare(req.body.password, user.password);
-  //       if (passCompare) {
-  //           if(user.password != req.body.password){ 
-  //               res.status(200).send({
-  //               message: "Password Incorrect!"
-  //               })
-  //             }
-  //               else{
-  //               res.status(200).send({
-  //               message: "Login Successful!"
-  //               })
-  //             }
-  //       }else{}}else{}
-
-  //     }
-
-      
-  //     } catch (error) {
-  //       console.log(error);
-  //       res.status(500).send({ message: "Internal Server Error Occurred!" });
-  //     }
-
+  
   const email = req.body.email
   const password = req.body.password
 
@@ -317,37 +245,6 @@ app.post("/user/login", async (req, res) => {
           })
 
       })
-
-
-
-
-
-
-          
-
-//       if (checkPassword(req.body.password)) {
-//         passBool = true;
-//         // console.log("Password is correct");
-//       } else {
-//         passBool = false;
-//         res.status(400).send({ message: "Please enter a strong password, It should contain 1 small,1 capital, 1 digit and 1 special character in it" });
-//       }
-
-//       if (nameBool && passBool && emailBool) {
-//         const hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
-//         const innerResult = await User.create({
-//           name: req.body.name,
-//           email: req.body.email,
-//           password: hashedPassword,
-//           user_type: req.body.user_type
-//         });
-//         res.status(201).send(innerResult);
-//       }
-//     }
-//   } catch (error) {
-//     console.log(error);
-//     res.status(500).send({ message: "Internal Server Error Occurred!" });
-//   }
 
 })
 
