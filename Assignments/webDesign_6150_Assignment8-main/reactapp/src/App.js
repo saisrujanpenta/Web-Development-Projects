@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
+// import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 
 
 
@@ -27,7 +28,7 @@ function App() {
 }
 
 function login() {
-  e.preventDefault();
+  // e.preventDefault();
   let request = {
     email: document.getElementById('exampleInputEmail1').value,
     password: document.getElementById('exampleInputPassword1').value
