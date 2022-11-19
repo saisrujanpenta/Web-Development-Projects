@@ -6,7 +6,7 @@ const app = express();
 const mongoose = require("mongoose");
 bcrypt = require("bcrypt"),
   bodyParser = require("body-parser");
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3005;
 
 const saltRounds = 10;
 
@@ -235,7 +235,7 @@ app.post("/user/login", async (req, res) => {
               //if error than throw error
               if (err) throw err
 
-              //if both match than you can do anything
+              //if both match 
               if (data) {
                   return res.status(200).json({ msg: "Login success" })
               } else {
