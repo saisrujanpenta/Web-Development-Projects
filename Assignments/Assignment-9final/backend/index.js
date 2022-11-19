@@ -231,17 +231,17 @@ app.post("/user/login", async (req, res) => {
   //find user exist or not
   User.findOne({ email })
       .then(user => {
-          //if user not exist than return status 400
+          //if user not exist then return status 400
           if (!user) return res.status(400).json({ msg: "User does not exist" })
 
-          //if user exist than compare password
+          //if user exist then compare password
           //password comes from the user
           //user.password comes from the database
           bcrypt.compare(password, user.password, (err, data) => {
-              //if error than throw error
+              //if error then throw error
               if (err) throw err
 
-              //if both match than you can do anything
+              //if both match 
               if (data) {
                   return res.status(200).json({ msg: "Login success" })
               } else {
