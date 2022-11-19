@@ -6,7 +6,11 @@ const app = express();
 const mongoose = require("mongoose");
 bcrypt = require("bcrypt"),
   bodyParser = require("body-parser");
-const PORT = process.env.PORT || 3005;
+
+const cors = require("cors");
+app.use(cors());
+
+const PORT = process.env.PORT || 3000;
 
 const saltRounds = 10;
 
