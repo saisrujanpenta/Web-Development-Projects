@@ -13,7 +13,7 @@ function Jobs() {
 
     const jobcard = {
         padding: "20px",
-        width: '78rem',
+        width: '76rem',
         margin: "10px"
     }
     const jobtitles = ["Wedding Photgrapher", "Video Editor", "Chef", "Interior Designer"]
@@ -52,8 +52,9 @@ function Jobs() {
     <h3 style={Headers}>Jobs that are currently available!</h3>
 
     <div className="Jobopenings" style={jobcard}>
+        <h3 style={jobcard}>Available Job Titles!</h3>
         {jobtitles.map((jobs) => (
-            <h4 style={jobcard}> {jobs} </h4>
+            <h5 style={jobcard}> {jobs} </h5>
         ))}
     </div>
     <Card style={jobcard}>
