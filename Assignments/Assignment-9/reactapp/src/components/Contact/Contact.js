@@ -1,13 +1,22 @@
 import React from "react";
 import {Link} from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 function Contact() {
+    const Headers = {
+        color: "#100F0F",
+        backgroundColor: "#F7F7F7",
+        padding: "30px",
+        fontFamily: "Arial",
+        textAlign: "center"
+      };
   return (
     <>
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          FoodX
+        DreamJob
         </a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
@@ -16,7 +25,7 @@ function Contact() {
           <ul className="navbar-nav">
             <Link to="/home">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#"> Home </a>
+              <a className="nav-link" aria-current="page" href="#"> Home </a>
             </li></Link>
             <Link to="/about">
             <li className="nav-item">
@@ -28,13 +37,34 @@ function Contact() {
             </li></Link>
             <Link to="/contact">
             <li className="nav-item">
-              <a className="nav-link" href="#"> Contact Us </a>
+              <a className="nav-link active" href="#" aria-current="page"> Contact Us </a>
             </li></Link>
           </ul>
         </div>
       </div>
     </nav>
-    <h1>Contact Page</h1>
+    <h3 style={Headers}>Give us your details. We will get in touch with you!</h3>
+    <Form style={{padding:'30px'}}>
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label>Full Name</Form.Label>
+        <Form.Control type="text" placeholder="Enter your Full Name" />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Email address</Form.Label>
+        <Form.Control type="email" placeholder="Enter email" />
+        <Form.Text className="text-muted">
+          We'll never share your email with anyone else.
+        </Form.Text>
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label>Mobile Number</Form.Label>
+        <Form.Control type="text" placeholder="Enter Mobile Number" />
+      </Form.Group><br />
+      <Button variant="dark" type="submit">
+        Submit
+      </Button>
+    </Form>
     </>
   );
 }

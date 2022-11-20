@@ -1,15 +1,31 @@
 import React from "react";
 import {Link} from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 // import "./reactapp/About/About.css";
 import Carousel from 'react-bootstrap/Carousel';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 function Home() {
+  let navigate = useNavigate(); 
+  const servicespage = () =>{ 
+    let path = `/contact`; 
+    navigate(path);
+  }
+
+  const Headers = {
+    color: "#100F0F",
+    backgroundColor: "#F7F7F7",
+    padding: "30px",
+    fontFamily: "Arial",
+    textAlign: "center"
+  };
   return (
     <>
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          FoodX
+          DreamJob
         </a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
@@ -26,7 +42,7 @@ function Home() {
             </li></Link>
             <Link to="/jobs">
             <li className="nav-item">
-              <a className="nav-link" href="#"> Jobs </a>
+              <a className="nav-link " href="#"> Jobs </a>
             </li></Link>
             <Link to="/contact">
             <li className="nav-item">
@@ -38,42 +54,55 @@ function Home() {
     </nav>
 
     <Carousel interval={2000} className="carousel">
-      <Carousel.Item className="carousel">
+      <Carousel.Item className="carousel" style={{height:"90vh"}}>
         <img
           className="d-block w-100"
-          src="https://www.momji.fr/jobs/sites/jobs/files/inline-images/recruitment.jpg"
+          src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp"
           alt="First slide"
         />
         <Carousel.Caption>
           <h3>Job Search ends here!</h3>
-          <p>Multitude no of jobs available from our website.</p>
+          <p>Have Photography skills? Come contact us!</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item className="carousel">
+      <Carousel.Item className="carousel" style={{height:"90vh"}}>
         <img
           className="d-block w-100"
-          src="https://www.daviecountyblog.com/wp-content/uploads/2020/05/D_C-Blog-JObs-Page-Image.jpg"
+          src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp"
           alt="Second slide"
         />
 
         <Carousel.Caption>
-          <h3>Open Source and Start Up Jobs</h3>
-          <p>Work for the world famous start up jobs as well as work with open source community.</p>
+          <h3>Job Search ends here!</h3>
+          <p>Want to pursue career in cullinary industry? Contact us!</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item className="carousel">
+      <Carousel.Item className="carousel" style={{height:"90vh"}}>
         <img
           className="d-block w-100"
-          src="https://24j1q8gzma4rsuat1tbzospi-wpengine.netdna-ssl.com/wp-content/uploads/2019/02/jobs-hiring-help-wanter.jpg"
+          src="https://mdbcdn.b-cdn.net/img/new/slides/009.webp"
           alt="Third slide"
         />
 
         <Carousel.Caption>
-          <h3>Jobs with varying diversity</h3>
-          <p>There is no limit when it comes to recruiting diverse culture from our portal.</p>
+          <h3>Job Search ends here!</h3>
+          <p>Get your dream Interior Designer job!</p>
         </Carousel.Caption>
       </Carousel.Item>
       </Carousel>
+
+      <h3 style={Headers}>Services We Provide!</h3>
+      
+      <Card>
+      <Card.Header>Services</Card.Header>
+      <Card.Body>
+        <Card.Title>We are good at so many things. Come Check us out!</Card.Title>
+        <Card.Text>
+          Find your drea job with us.
+        </Card.Text>
+        <Button variant="dark" onClick={servicespage}>Contact us for our Services!</Button>
+      </Card.Body>
+    </Card>
     </>  
   );
 }
