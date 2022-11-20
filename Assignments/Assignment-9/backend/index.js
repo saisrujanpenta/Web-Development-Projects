@@ -241,9 +241,9 @@ app.post("/user/login", async (req, res) => {
 
               //if both match 
               if (data) {
-                  return res.status(200).json({ msg: "Login success" })
+                  return res.status(200).json({ msg: "Login success", status:'ok' })
               } else {
-                  return res.status(401).json({ msg: "Invalid credentials!" })
+                  return res.status(401).json({ msg: "Invalid credentials!", status:'not ok' })
               }
 
           })

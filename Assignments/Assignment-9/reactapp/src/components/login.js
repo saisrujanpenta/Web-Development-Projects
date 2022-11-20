@@ -1,16 +1,23 @@
 import React, { Component } from "react";
-// import "./App.css";
+import Home from "./Home/Home";
+import { Route,Routes} from 'react-router-dom';
 
+
+// import "./App.css";
+// import {Navigate} from 'react-router-dom';
+// const navigate = useNavigate()
 export default class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
       email: "",
       password: "",
+      isAuthenticated: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleSubmit(e) {
+    
     e.preventDefault();
     const { email, password } = this.state;
     console.log(email, password);
@@ -31,15 +38,27 @@ export default class Login extends Component {
       .then((res) => res.json())
       .then((data) => {
         console.log(data, "userRegister");
+        
         if (data.status === "ok") {
           alert("login successful");
           window.localStorage.setItem("token", data.data);
-          window.location.href = "./userDetails";
+          // window.location.href = "./userDetails";
+          this.setState({isAuthenticated:true});
         }
+        // <Navigate to="/home"/>
       });
   }
   
   render(){
+    const {isAuthenticated}=this.state;
+    if(isAuthenticated){
+      console.log('srujan');
+      return(<Routes>
+
+        <Route path="*" element={<Home />}/>
+
+        </Routes>)
+    }
     return (
         <div className="container">
         <h2>Login</h2><br></br>
