@@ -2,6 +2,7 @@ import React from "react";
 import {Link} from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Card from 'react-bootstrap/Card';
 
 function Contact() {
     const Headers = {
@@ -44,6 +45,9 @@ function Contact() {
       </div>
     </nav>
     <h3 style={Headers}>Give us your details. We will get in touch with you!</h3>
+    <Card>
+      <Card.Body style={Headers}>This is the right thing! You are one step close to your dream career!</Card.Body>
+    </Card>
     <Form style={{padding:'30px'}}>
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Full Name</Form.Label>
