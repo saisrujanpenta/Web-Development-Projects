@@ -68,3 +68,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+### How this works!
+
+1. First of all, we need to start the database by running 'npm start' on the terminal
+2. Now, run 'npm start' on our frontend reactapp
+3. Login page will appear, give the credentials
+4. If the credentials are correct, it shows 'login successful' on the alert box and 'login unsuccessful' if credentials are wrong
+5. Once you click 'ok' on alert box, it will take you to home page
+6. You have a navbar which allows you to move to other pages
+7. I have added 'cards' in all four pages
+8. Used 'maps' in jobs page
