@@ -5,6 +5,9 @@ import { useNavigate } from "react-router-dom";
 import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import Accordion from 'react-bootstrap/Accordion';
+import ProgressBar from 'react-bootstrap/ProgressBar';
+
 
 function Home() {
   let navigate = useNavigate(); 
@@ -20,6 +23,8 @@ function Home() {
     fontFamily: "Arial",
     textAlign: "center"
   };
+
+  
   return (
     <>
     <nav className="navbar navbar-expand-lg bg-light">
@@ -91,7 +96,61 @@ function Home() {
       </Carousel.Item>
       </Carousel>
 
-      <h3 style={Headers}>Services We Provide!</h3>
+      
+    <h3 style={Headers}>Growth over Years!</h3><br />
+
+    <div>
+      2018
+      <ProgressBar striped variant="dark" now={40} /><br />
+      2019
+      <ProgressBar striped variant="dark" now={20} /><br />
+      2020
+      <ProgressBar striped variant="dark" now={60} /><br />
+      2021
+      <ProgressBar striped variant="dark" now={80} /><br />
+    </div><br />
+
+    <h3 style={Headers}>Customer Reviews</h3>
+
+    <Accordion>
+      <Accordion.Item eventKey="0">
+        <Accordion.Header>Hagrid | Wedding Photgrapher</Accordion.Header>
+        <Accordion.Body>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey="1">
+        <Accordion.Header>Hermoine | Chef</Accordion.Header>
+        <Accordion.Body>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey="2">
+        <Accordion.Header>Harry Potter | Video Editor</Accordion.Header>
+        <Accordion.Body>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </Accordion.Body>
+      </Accordion.Item>
+    </Accordion>
+    <h3 style={Headers}>Services We Provide!</h3>
       
       <Card>
       <Card.Header>Services</Card.Header>
@@ -102,7 +161,10 @@ function Home() {
         </Card.Text>
         <Button variant="dark" onClick={servicespage}>Contact us for our Services!</Button>
       </Card.Body>
-    </Card>
+    </Card><br />
+
+    
+
     </>  
   );
 }

@@ -15,6 +15,20 @@ function Jobs() {
         padding: "20px",
         width: '76rem',
         margin: "10px"
+    };
+
+    const Jobopenings = {
+      padding: "0",
+      margin: "0",
+    }
+
+    const availablejobtitles = {
+      padding: "20px",
+      margin: "0",
+      textAlign: "center",
+      fontFamily: "Arial",
+      color: "#F1F1F1",
+      backgroundColor: "#100F0F"
     }
     const jobtitles = ["Wedding Photgrapher", "Video Editor", "Chef", "Interior Designer"]
   return (
@@ -51,12 +65,13 @@ function Jobs() {
     </nav>
     <h3 style={Headers}>Jobs that are currently available!</h3>
 
-    <div className="Jobopenings" style={jobcard}>
-        <h3 style={jobcard}>Available Job Titles!</h3>
+    <div className="Jobopenings" style={Jobopenings}>
+        <h3 style={availablejobtitles}>Available Job Titles!</h3>
         {jobtitles.map((jobs) => (
             <h5 style={jobcard}> {jobs} </h5>
         ))}
     </div>
+    <h3 style={Headers}>Job Openings!</h3>
     <Card style={jobcard}>
       <Card.Body>
         <Card.Title>Wedding Photographer</Card.Title>
@@ -91,10 +106,9 @@ function Jobs() {
     <Card style={jobcard}>
       <Card.Body>
         <Card.Title>Interior Designer</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+        <Card.Subtitle className="mb-2 text-muted">Design a office space!</Card.Subtitle>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          Need a person who can aesthitically design our corporate office space.
         </Card.Text>
         <Card.Link href="#">Job Link</Card.Link>
       </Card.Body>
