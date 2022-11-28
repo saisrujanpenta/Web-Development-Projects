@@ -16,6 +16,35 @@ function Home() {
     navigate(path);
   }
 
+  const Navbar = {
+    textDecoration: 'none'
+  }
+
+  const Logo = {
+    color: "purple",
+    fontWeight: 'bold'
+  }
+
+  const purpletext = {
+    color: "purple",
+  }
+
+  const team1 = {
+    flexDirection:'row', 
+    flexWrap:'wrap',
+    paddingTop: "40px", 
+    paddingLeft: "40px",
+    paddingBottom: "40px",
+    paddingRight: "90px"
+  }
+
+  const Titletextbar = {
+    paddingTop: "50px",
+    paddingLeft: "20px",
+    textAlign: "center",
+    backgroundColor: "rgb(247, 251, 255)"
+  }
+
   const Headers = {
     color: "#100F0F",
     backgroundColor: "#F7F7F7",
@@ -28,35 +57,75 @@ function Home() {
   return (
     <>
     <nav className="navbar navbar-expand-lg bg-light">
+      <br></br><br></br>
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          DreamJob
+        <a className="navbar-brand" href="#" style={Logo}>
+          FOODX
         </a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
-            <Link to="/home">
+            <Link style={Navbar} to="/home">
             <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="#"> Home </a>
             </li></Link>
-            <Link to="/about">
+            <Link style={Navbar} to="/about">
             <li className="nav-item">
               <a className="nav-link" href="#"> About </a>
             </li></Link>
-            <Link to="/jobs">
+            <Link style={Navbar} to="/jobs">
             <li className="nav-item">
-              <a className="nav-link " href="#"> Jobs </a>
+              <a className="nav-link " href="#"> Services </a>
             </li></Link>
-            <Link to="/contact">
+            <Link style={Navbar} to="/contact">
             <li className="nav-item">
               <a className="nav-link" href="#"> Contact Us </a>
             </li></Link>
           </ul>
         </div>
       </div>
+      <br></br><br></br>
     </nav>
+
+  <div className="Titletext" style={Titletextbar}>
+    <h2><b style={purpletext}>Fresh</b> Food <br></br> Creative Catering</h2>
+    <h5>Harnessing the science of nature, we're taking it back to basics with ecofriendly,<br></br>
+      ethically-sourced, and earth-derived ingredients so that your beauty shines from the<br></br>
+      inside. No harsh chemicals.</h5>
+      <br></br>
+      <Button style={purpletext} variant="outline-dark" onClick={servicespage}>Explore!</Button>
+  </div>
+
+  <div className="img">
+    <img src="./Assets/I1.jpg" alt="" width="100%" height="300%"></img>
+
+  </div>
+
+  <div className="team">
+    <div className="nextHeader"> <br></br><br></br>
+      <h2><i>Our Team</i></h2>
+    </div>
+
+    <div className="col-sm-6 col-md-4 team1">
+      <img src="Assets/Team1.jpg" className="rounded-circle" alt="Cinque Terre"></img>
+      <h4 >Mahesh</h4>
+      <p >Lead Designer</p>
+    </div>
+
+    <div className="col-sm-6 col-md-4 team1">
+      <img src="Assets/Team2.jpg" className="rounded-circle" alt="Cinque Terre"></img>
+      <h4 >Anda</h4>
+      <p >Product Manager</p>
+    </div>
+
+    <div className="col-sm-6 col-md-4 team1">
+      <img src="Assets/Team3.jpg" className="rounded-circle" alt="Cinque Terre"></img>
+      <h4 >William</h4>
+      <p >Senior Engineer</p>
+    </div>
+  </div>
 
     <Carousel interval={2000} className="carousel">
       <Carousel.Item className="carousel" style={{height:"90vh"}}>

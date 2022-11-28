@@ -14,6 +14,15 @@ function About() {
     textAlign: "center"
   };
 
+  const Navbar = {
+    textDecoration: 'none'
+  }
+
+  const Logo = {
+    color: "purple",
+    fontWeight: 'bold'
+  }
+
   const paragraph = {
     color: "#100F0F",
     padding: "30px",
@@ -25,27 +34,27 @@ function About() {
     <>
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-        DreamJob
+        <a className="navbar-brand" href="#" style={Logo}>
+          FOODX
         </a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
-            <Link to="/home">
+            <Link style={Navbar} to="/home">
             <li className="nav-item">
-              <a className="nav-link" aria-current="page" href="#"> Home </a>
+              <a className="nav-link " aria-current="page" href="#"> Home </a>
             </li></Link>
-            <Link to="/about">
+            <Link style={Navbar} to="/about">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#"> About </a>
+              <a className="nav-link active" href="#"> About </a>
             </li></Link>
-            <Link to="/jobs">
+            <Link style={Navbar} to="/jobs">
             <li className="nav-item">
-              <a className="nav-link" href="#"> Jobs </a>
+              <a className="nav-link " href="#"> Jobs </a>
             </li></Link>
-            <Link to="/contact">
+            <Link style={Navbar} to="/contact">
             <li className="nav-item">
               <a className="nav-link" href="#"> Contact Us </a>
             </li></Link>
