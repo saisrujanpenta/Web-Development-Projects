@@ -11,9 +11,9 @@ class Counter extends Component {
         return (
             <div className="App">
                 <div>Counter {counter}</div>
-                <div><button onCLick={increment}>Increment</button></div>
-                <div><button onCLick={decrement}>Decrement</button></div>
-                <div><button onCLick={reset}>Reset</button></div>
+                <div><button onClick={increment}>Increment</button></div>
+                <div><button onClick={decrement}>Decrement</button></div>
+                <div><button onClick={reset}>Reset</button></div>
             </div>
         )
     }
