@@ -1,0 +1,16 @@
+frontend/client:
+
+npm install bootstrap
+npm install react-bootstrap
+
+
+server side:
+
+npm init
+npm install express
+npm install nodemon
+
+
+Mongodb Atlas 
+user: Srujan
+password: Foodxproject
